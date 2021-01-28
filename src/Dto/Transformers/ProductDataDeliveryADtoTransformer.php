@@ -13,7 +13,7 @@ class ProductDataDeliveryADtoTransformer extends AbstractProductDataDtoTransform
      * @param array $product
      * @return ProductDataDeliveryADto
      */
-    public function transformFromObject(array $product): ProductDataDeliveryADto
+    public static function transformFromObject(array $product): ProductDataDeliveryADto
     {
         $dto = new ProductDataDeliveryADto();
         $dto->setDepth($product['depth']);

@@ -7,29 +7,16 @@ namespace App\Enums;
 
 use App\Models\Delivery\DeliveryA;
 use App\Models\Delivery\DeliveryB;
-use Exception;
 
-class DeliveriesEnum
+class DeliveriesEnum extends AbstractEnum
 {
     /**
      * @var array<string, string>
      */
     public const ENUM = [
-        'delivery_a' => DeliveryA::class,
-        'delivery_b' => DeliveryB::class,
+        'deliveryA' => DeliveryA::class,
+        'deliveryB' => DeliveryB::class,
     ];
 
-    /**
-     * @param string $key
-     * @return string
-     * @throws Exception
-     */
-    public static function getByKey(string $key): string
-    {
-        if (!isset(self::ENUM[$key])) {
-            throw new Exception('Key not specified');
-        }
 
-        return self::ENUM[$key];
-    }
 }

@@ -13,16 +13,16 @@ abstract class AbstractRequestRequestDtoTransformer implements RequestDtoTransfo
      * @param iterable $objects
      * @return iterable
      */
-    public function transformFromObjects(iterable $objects): iterable
+    public static function transformFromObjects(iterable $objects): iterable
     {
         $dto = [];
 
         foreach ($objects as $object) {
-            $dto[] = $this->transformFromObject($object);
+            $dto[] = static::transformFromObject($object);
         }
 
         return $dto;
     }
 
-    abstract public function transformFromObject(Request $object);
+    abstract static public function transformFromObject(Request $object);
 }

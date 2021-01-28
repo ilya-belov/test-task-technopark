@@ -8,6 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface RequestDtoTransformerInterface
 {
-    public function transformFromObject(Request $object);
-    public function transformFromObjects(iterable $objects): iterable;
+    public static function transformFromObject(Request $object);
+    public static function transformFromObjects(iterable $objects): iterable;
 }

@@ -8,6 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface ProductDataDtoTransformerInterface
 {
-    public function transformFromObject(array $product);
-    public function transformFromObjects(array $products): array;
+    public static function transformFromObject(array $product);
+    public static function transformFromObjects(array $products): array;
 }

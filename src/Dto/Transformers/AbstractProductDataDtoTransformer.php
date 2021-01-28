@@ -13,16 +13,16 @@ abstract class AbstractProductDataDtoTransformer implements ProductDataDtoTransf
      * @param array $products
      * @return array
      */
-    public function transformFromObjects(array $products): array
+    public static function transformFromObjects(array $products): array
     {
         $dto = [];
 
         foreach ($products as $product) {
-            $dto[] = $this->transformFromObject($product);
+            $dto[] = static::transformFromObject($product);
         }
 
         return $dto;
     }
 
-    abstract public function transformFromObject(array $product);
+    abstract static public function transformFromObject(array $product);
 }
