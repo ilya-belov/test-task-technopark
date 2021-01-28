@@ -1,4 +1,4 @@
-index:
-    path: /delivery
+calculate_delivery_info:
+    path: /api/calculate-delivery-info
     methods: POST
-    controller: App\Controller\DeliveryController::index
+    controller: Delivery\Controller\DeliveryController::index
