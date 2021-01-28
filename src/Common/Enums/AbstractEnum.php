@@ -24,4 +24,9 @@ abstract class AbstractEnum
 
         return static::ENUM[$key];
     }
+
+    public static function hasKey($key): bool
+    {
+        return isset(static::ENUM[$key]);
+    }
 }

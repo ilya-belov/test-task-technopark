@@ -26,6 +26,10 @@ class DeliveryService
          * @var DeliveryDtoRequestInterface $deliveryData
          */
         foreach ($data as $deliveryName => $deliveryData) {
+            if (!DeliveriesEnum::hasKey($deliveryName)) {
+                throw new Exception('Unknown delivery');
+            }
+
             $delivery = DeliveryFactory::create(DeliveriesEnum::getByKey($deliveryName));
             $result[$deliveryName] = $delivery->calculateDeliveryInfo(
                 $deliveryData->getSenderAddress(),

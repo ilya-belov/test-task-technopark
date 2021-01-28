@@ -19,6 +19,4 @@ class DeliveriesEnum extends AbstractEnum
         'deliveryA' => CalculateDeliveryInfoAService::class,
         'deliveryB' => CalculateDeliveryInfoBService::class,
     ];
-
-
 }
