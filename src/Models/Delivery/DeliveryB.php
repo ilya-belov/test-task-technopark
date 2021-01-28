@@ -25,12 +25,12 @@ class DeliveryB implements DeliveryInterface
         # бррр....
 
         $date = new DateTimeImmutable('now');
-        $days = (strlen($senderAddress) + strlen($recipientAddress)) / 10;
-        $date->add(new DateInterval("PT${$days}D"));
+        $days = (strlen($senderAddress) + strlen($recipientAddress));
+        $date->add(new DateInterval("P{$days}D"));
 
         return [
             'coefficient' => (count($productsData) * 10) / 2.5,
-            'date' => $date->getTimestamp(),
+            'date' => $date->format('d-m-Y'),
         ];
     }
 }
