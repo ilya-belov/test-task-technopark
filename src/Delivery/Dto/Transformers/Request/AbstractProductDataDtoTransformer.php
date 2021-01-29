@@ -17,6 +17,7 @@ abstract class AbstractProductDataDtoTransformer implements ProductDataDtoTransf
 
         foreach ($products as $product) {
             $dto[] = static::transformFromArray($product);
+
         }
 
         return $dto;

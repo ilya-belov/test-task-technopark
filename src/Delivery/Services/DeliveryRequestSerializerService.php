@@ -17,15 +17,18 @@ class DeliveryRequestSerializerService
      */
     public function serialize(Request $request): array
     {
-        switch ($request->get('delivery')) {
+        $arrayReq = $request->toArray();
+
+        switch ($arrayReq['delivery']) {
             case 'deliveryA':
-                return ['deliveryA' => DeliveryARequestDtoTransformer::transformFromArray($request->toArray())];
+                return ['deliveryA' => DeliveryARequestDtoTransformer::transformFromArray($arrayReq)];
             case 'deliveryB':
-                return ['deliveryB' => DeliveryBRequestDtoTransformer::transformFromArray($request->toArray())];
+                return ['deliveryB' => DeliveryBRequestDtoTransformer::transformFromArray($arrayReq)];
+            case 'all':
             default:
                 return [
-                    'deliveryA' => DeliveryARequestDtoTransformer::transformFromArray($request->toArray()),
-                    'deliveryB' => DeliveryBRequestDtoTransformer::transformFromArray($request->toArray()),
+                    'deliveryA' => DeliveryARequestDtoTransformer::transformFromArray($arrayReq),
+                    'deliveryB' => DeliveryBRequestDtoTransformer::transformFromArray($arrayReq),
                 ];
         }
     }

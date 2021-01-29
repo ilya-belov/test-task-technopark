@@ -16,10 +16,10 @@ class ProductDataDeliveryADtoTransformer extends AbstractProductDataDtoTransform
     public static function transformFromArray(array $product): ProductDataDeliveryADto
     {
         $dto = new ProductDataDeliveryADto();
-        $dto->setDepth($product['depth']);
-        $dto->setHeight($product['height']);
-        $dto->setWeight($product['weight']);
-        $dto->setWidth($product['width']);
+        $dto->setDepth((float) $product['depth']);
+        $dto->setHeight((float) $product['height']);
+        $dto->setWeight((float) $product['weight']);
+        $dto->setWidth((float) $product['width']);
 
         return $dto;
     }
