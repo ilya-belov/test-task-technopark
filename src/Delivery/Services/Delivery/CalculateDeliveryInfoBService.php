@@ -29,7 +29,7 @@ class CalculateDeliveryInfoBService implements CalculateDeliveryInfoInterface
         $date->add(new DateInterval("P{$days}D"));
 
         return [
-            'coefficient' => 150 * (5 + count($productsData) * 10) / 2.5,
+            'coefficient' => (5 + count($productsData) * 10) / 2.5,
             'date' => $date->format('d-m-Y'),
         ];
     }
